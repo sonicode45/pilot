@@ -8,7 +8,7 @@ on:
 
 jobs:
   program:
-  - name: "Build & Execute C++ Programs"
+    name: "Build & Execute C++ Programs"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
