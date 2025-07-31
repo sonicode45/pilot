@@ -1,0 +1,25 @@
+name: C++ Programs
+on:
+  workflow_dispatch:
+    inputs:
+      cpp_program_file_name:
+        type: string
+        required: true
+
+jobs:
+  program:
+  - name: "Build & Execute C++ Programs"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        
+      - name: Build Program
+        working-directory: cpp_programs
+        run: |
+          g++ -o output ${{ inputs.cpp_program_file_name }}
+
+      - name: Execute Program
+        working-directory: cpp_programs
+        run: |
+          ./output
